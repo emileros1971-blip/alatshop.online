@@ -52,7 +52,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-2.5 group">
       <span class="relative inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-red-700 shadow-glow ring-1 ring-white/10 overflow-hidden group-hover:scale-105 transition">
-        <img src="favicon.png" alt="Alatshop logo" class="size-10 object-cover" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'font-display font-bold text-white text-lg',textContent:'A'}))"/>
+        <img src="logo.png" alt="Alatshop logo" class="size-10 object-cover" onerror="this.onerror=null;this.src='favicon.png';this.onerror=()=>this.replaceWith(Object.assign(document.createElement('span'),{className:'font-display font-bold text-white text-lg',textContent:'A'}));"/>
       </span>
       <div class="leading-tight">
         <div class="font-display font-bold text-lg tracking-tight">Alatshop</div>
@@ -202,34 +202,33 @@ tailwind.config = {
 const WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
 
 // ====== DATA ======
-const imgs = (b)=>[`images/${b}.jpg`,`images/${b}a.jpg`,`images/${b}b.jpg`,`images/${b}c.jpg`];
 const PRODUCTS = [
   {
-    id:"mustang-testera",
-    name:"Motorna testera MUSTANG STAR 5,8KS",
-    tagline:"Snažna dvotaktna testera za teške radove",
-    price:7670, oldPrice:9500, badge:"AKCIJA",
-    images: imgs("tester"),
-    shortSpecs:["5,8 KS","Mač 40 cm","73 ccm","5,5 kg"],
-    description:"Profesionalna motorna testera Mustang Star sa snagom od 5,8 KS i mačem od 40 cm. Idealna za seču drva i grube radove.",
-    fullSpecs:[["Snaga","5,8 KS"],["Rezni alat","40 cm (16\" .325)"],["Motor","Dvotaktni"],["Kapacitet","73 ccm"],["Gorivo","Benzin – mešavina 4%"],["Obrtaji","13.500 o/min"],["Težina","5,5 kg"]],
+    id:"hitman-dizalica",
+    name:"Pneumatska dizalica HITMAN 3,5T",
+    tagline:"Pneumatsko-hidraulična podna dizalica za teretna i putnička vozila",
+    price:18900, oldPrice:24000, badge:"NOVO",
+    image: "images/dizalica.jpg",
+    shortSpecs:["Nosivost 3,5 t","Pritisak 5–10 bara","Min 15 cm","Max 40 cm"],
+    description:"Pneumatska dizalica Hitman nosivosti 3,5 tone — pokreće se komprimovanim vazduhom uz brzu spojnicu za povezivanje pneumatskih uređaja. Robustna konstrukcija, idealna za servise, vulkanizere i radionice.",
+    fullSpecs:[["Brend","Hitman"],["Nosivost","3,5 tone"],["Min. visina","15 cm"],["Max. visina","40 cm"],["Radni pritisak","5–10 bara"],["Pogon","Komprimovani vazduh"],["Težina","18 kg"],["Spojnica","Brza, univerzalna"]],
   },
   {
-    id:"hitman-inverter",
-    name:"Inverter aparat za zavarivanje HITMAN 330A",
-    tagline:"Kompaktan IGBT inverter za pouzdano MMA zavarivanje",
-    price:6490, oldPrice:8200, badge:"POPULARNO",
-    images: imgs("hitman"),
-    shortSpecs:["330 A","IGBT","ARC Force","Hot Start"],
-    description:"Hitman HT-WD-330K — kompaktan i pouzdan IGBT inverter za MMA zavarivanje. Idealan za kućnu, servisnu i laku industrijsku upotrebu.",
-    fullSpecs:[["Snaga","330 A"],["Napon","230 V / 50–60 Hz"],["Tehnologija","DC inverter IGBT"],["Način","MMA"],["Elektrode","1.6 – 4.0 mm"],["Funkcije","ARC Force, Hot Start, Anti-Stick"]],
+    id:"hitman-trimer",
+    name:"Trimer HITMAN HT-GT-1542X 6,8KS – 3u1",
+    tagline:"Snažan benzinski trimer / trimer za žbunje / kosa – 3u1 set",
+    price:14900, oldPrice:18500, badge:"BEST SELLER",
+    image: "images/trimer.jpg",
+    shortSpecs:["6,8 KS","42,7 ccm","3u1 set","Dvotaktni"],
+    description:"Hitman HT-GT-1542X — moćan benzinski trimer 3u1 sa 6,8 KS. U setu dolaze glava sa najlonom, tricangla nož i nož za žbunje. Pogodan za košenje trave, korova i niskog rastinja u dvorištu, voćnjaku i na velikim površinama.",
+    fullSpecs:[["Brend","Hitman"],["Model","HT-GT-1542X"],["Snaga","6,8 KS"],["Zapremina motora","42,7 ccm"],["Motor","Dvotaktni"],["Gorivo","Benzin – mešavina"],["U setu","Glava sa najlonom + tricangla + nož za žbunje"],["Namena","Trava, korov, žbunje"]],
   },
   {
     id:"paviljon-3x3",
     name:"Paviljon / Tenda za baštu 3x3 m",
     tagline:"Bela baštenska tenda za leto, slavlja i baštu",
     price:3990, oldPrice:5500, badge:"BEST SELLER",
-    images: imgs("Gazebo tenda 3x3 bela-1753959164074"),
+    image: "images/paviljon.jpg",
     shortSpecs:["300×300×250 cm","Metal","PE 100 g/m²","Bela"],
     description:"Praktičan paviljon 3×3 m sa belim platnom i metalnom konstrukcijom. Stopice, kanap i klinovi u paketu.",
     fullSpecs:[["Dimenzije","300×300×250 cm"],["Konstrukcija","Metal 18×18×18 mm"],["Platno","Polietilen 100 g"],["Boja","Bela"],["U paketu","Stopice, kanap, klinovi"]],
@@ -239,7 +238,7 @@ const PRODUCTS = [
     name:"Trambolina Playtime sa zaštitnom mrežom i merdevinama",
     tagline:"Odaberite veličinu — cena se prilagođava",
     price:12000, badge:"4 VELIČINE",
-    images: imgs("Trambolina 183cm sa merdevinama-1775046906059"),
+    image: "images/trambolina.jpg",
     shortSpecs:["183 / 244 / 305 / 366 cm","Galvanizovani čelik","3+ god","Mreža + merdevine"],
     description:"Playtime trambolina sa zaštitnom mrežom, obloženim stubovima i merdevinama. Galvanizovana čelična konstrukcija.",
     variantLabel:"Veličina",
@@ -301,16 +300,10 @@ function renderProducts(){
     <article class="group relative bg-white rounded-2xl overflow-hidden shadow-card border border-border" data-pid="${p.id}">
       ${p.badge?`<span class="absolute top-4 left-4 z-10 bg-sale text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">${p.badge}</span>`:""}
       <div class="grid md:grid-cols-2 gap-0">
-        <div class="bg-neutral-100 p-4 md:p-6">
-          <button class="lb-open block w-full aspect-square overflow-hidden rounded-xl bg-white" data-pid="${p.id}" data-i="0">
-            <img class="main-img w-full h-full object-contain" src="${p.images[0]}" alt="${p.name}" onerror="this.src='${placeholder}'"/>
+        <div class="bg-neutral-100 p-4 md:p-6 flex items-center">
+          <button class="lb-open block w-full aspect-square overflow-hidden rounded-xl bg-white" data-pid="${p.id}">
+            <img class="w-full h-full object-contain" src="${p.image}" alt="${p.name}" onerror="this.src='${placeholder}'"/>
           </button>
-          <div class="grid grid-cols-4 gap-2 mt-3">
-            ${p.images.map((src,i)=>`
-              <button class="thumb aspect-square overflow-hidden rounded-lg bg-white border-2 ${i===0?'border-primary':'border-transparent'}" data-pid="${p.id}" data-i="${i}">
-                <img class="w-full h-full object-contain" src="${src}" alt="" onerror="this.src='${placeholder}'"/>
-              </button>`).join("")}
-          </div>
         </div>
         <div class="p-6 md:p-8 flex flex-col">
           <h3 class="text-2xl font-bold leading-tight">${p.name}</h3>
@@ -349,18 +342,11 @@ function renderProducts(){
   // hero grid
   document.getElementById("hero-grid").innerHTML = PRODUCTS.map((p,i)=>`
     <div class="bg-white rounded-2xl p-4 shadow-2xl" style="transform:${i%2?'translateY(2rem) rotate(2deg)':'rotate(-2deg)'}">
-      <img class="w-full aspect-square object-contain" src="${p.images[0]}" alt="${p.name}" onerror="this.src='${placeholder}'"/>
+      <img class="w-full aspect-square object-contain" src="${p.image}" alt="${p.name}" onerror="this.src='${placeholder}'"/>
     </div>`).join("");
 
   // wire events
-  grid.querySelectorAll(".thumb").forEach(b=>b.addEventListener("click",e=>{
-    const card=b.closest("article"); const i=+b.dataset.i;
-    card.querySelector(".main-img").src = findProduct(b.dataset.pid).images[i];
-    card.querySelectorAll(".thumb").forEach(t=>t.classList.remove("border-primary"));
-    b.classList.add("border-primary");
-    card.querySelector(".lb-open").dataset.i = i;
-  }));
-  grid.querySelectorAll(".lb-open").forEach(b=>b.addEventListener("click",()=>openLB(b.dataset.pid, +b.dataset.i)));
+  grid.querySelectorAll(".lb-open").forEach(b=>b.addEventListener("click",()=>openLB(b.dataset.pid)));
   grid.querySelectorAll(".variant").forEach(b=>b.addEventListener("click",()=>{
     variantSel[b.dataset.pid]=b.dataset.vid; renderProducts();
   }));
@@ -385,7 +371,7 @@ function renderCart(){
   }
   items.innerHTML = lines.map(l=>`
     <div class="flex gap-3 p-3 bg-neutral-100 rounded-xl">
-      <img src="${l.product.images[0]}" alt="" class="size-16 object-contain bg-white rounded-lg" onerror="this.src='${placeholder}'"/>
+      <img src="${l.product.image}" alt="" class="size-16 object-contain bg-white rounded-lg" onerror="this.src='${placeholder}'"/>
       <div class="flex-1 min-w-0">
         <p class="text-sm font-semibold leading-tight line-clamp-2">${l.name}</p>
         <p class="text-sm text-primary font-bold mt-1">${fmt(l.subtotal)}</p>
@@ -453,15 +439,13 @@ document.getElementById("contact-form").addEventListener("submit", async e=>{
 
 // ====== LIGHTBOX ======
 const lb=document.getElementById("lightbox"), lbImg=document.getElementById("lb-img");
-let lbState={imgs:[], i:0};
-function openLB(pid,i){ const p=findProduct(pid); lbState={imgs:p.images, i}; lbImg.src=p.images[i]; lb.classList.remove("hidden"); lb.classList.add("flex"); }
+function openLB(pid){ const p=findProduct(pid); lbImg.src=p.image; lb.classList.remove("hidden"); lb.classList.add("flex"); }
 function closeLB(){ lb.classList.add("hidden"); lb.classList.remove("flex"); }
-function nav(d){ lbState.i=(lbState.i+d+lbState.imgs.length)%lbState.imgs.length; lbImg.src=lbState.imgs[lbState.i]; }
 document.getElementById("lb-close").addEventListener("click",closeLB);
-document.getElementById("lb-prev").addEventListener("click",()=>nav(-1));
-document.getElementById("lb-next").addEventListener("click",()=>nav(1));
-lb.addEventListener("click",e=>{if(e.target===lb) closeLB();});
-document.addEventListener("keydown",e=>{ if(lb.classList.contains("hidden"))return; if(e.key==="Escape")closeLB(); if(e.key==="ArrowLeft")nav(-1); if(e.key==="ArrowRight")nav(1);});
+document.getElementById("lb-prev")?.remove();
+document.getElementById("lb-next")?.remove();
+lb.addEventListener("click",e=>{if(e.target===lb||e.target===lbImg) closeLB();});
+document.addEventListener("keydown",e=>{ if(!lb.classList.contains("hidden") && e.key==="Escape") closeLB();});
 
 // ====== INIT ======
 document.getElementById("year").textContent=new Date().getFullYear();
