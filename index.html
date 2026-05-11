@@ -1,313 +1,206 @@
-<!doctype html>
-<html lang="sr">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Alatshop — Alat koji radi. Cene koje oduševljavaju.</title>
-<meta name="description" content="Pneumatske dizalice, trimeri, paviljoni i tramboline — sve sa garancijom i dostavom kurirom širom Srbije. Plaćanje pouzećem." />
-<link rel="icon" href="logo.png" />
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        brand: '#dc2626',
-        'brand-soft': '#fee2e2',
-        ink: '#0a0a0a',
-      },
-      fontFamily: {
-        sans: ['Inter','system-ui','sans-serif'],
-        display: ['"Space Grotesk"','Inter','sans-serif'],
-      },
-      boxShadow: {
-        glow: '0 10px 40px -10px rgba(220,38,38,0.5)',
-        card: '0 10px 30px -15px rgba(0,0,0,0.15)',
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alatshop.online – Alat i oprema sa garancijom | Subotica</title>
+    <meta
+      name="description"
+      content="Akcijska prodaja alata i opreme: pneumatska dizalica, trimer, paviljon i tramboline. Dostava kurirskom službom, plaćanje pouzećem, garancija na ispravnost."
+    />
+    <meta property="og:title" content="Alatshop.online – Alat i oprema sa garancijom" />
+    <meta property="og:description" content="4 proizvoda na akciji. Dostava kurirskom službom, plaćanje pouzećem." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+              body: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              background: '#fafafa',
+              foreground: '#22252b',
+              card: '#ffffff',
+              border: '#e6e7eb',
+              input: '#e6e7eb',
+              primary: '#dc2626',
+              ink: '#1f2230',
+              sale: '#dc2626',
+              muted: '#f3f4f6',
+              'muted-foreground': '#6b7280',
+              accent: '#fde5e5',
+            },
+            boxShadow: {
+              card: '0 4px 12px -2px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04)',
+              glow: '0 12px 40px -8px rgba(220,38,38,.45)',
+            },
+          }
+        }
       }
-    }
-  }
-};
-</script>
-<style>
-  body{font-family:Inter,system-ui,sans-serif;background:#fafafa;color:#0a0a0a;}
-  .font-display{font-family:"Space Grotesk",Inter,sans-serif;}
-  .bg-grid{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px;}
-  details>summary{list-style:none;cursor:pointer;}
-  details>summary::-webkit-details-marker{display:none;}
-  .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-</style>
-</head>
-<body>
-<a id="top"></a>
-
-<!-- HEADER -->
-<header class="sticky top-0 z-30 bg-ink/95 backdrop-blur-md border-b border-white/10 text-white shadow-lg shadow-black/20">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2.5">
-      <img src="logo.png" alt="Alatshop logo" width="40" height="40" class="size-10 rounded-xl object-contain bg-white/95 p-1 ring-1 ring-white/10 shadow-glow"/>
-      <div class="leading-tight">
-        <div class="font-display font-bold text-lg tracking-tight">Alatshop</div>
-        <div class="text-[10px] text-white/60 -mt-0.5 uppercase tracking-wider">alatshop.online</div>
-      </div>
-    </a>
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-white/80">
-      <a href="#proizvodi" class="hover:text-brand transition">Proizvodi</a>
-      <a href="#servis" class="hover:text-brand transition">Servis</a>
-      <a href="#zasto" class="hover:text-brand transition">Zašto mi</a>
-      <a href="#kontakt" class="hover:text-brand transition">Kontakt</a>
-    </nav>
-    <a href="tel:+381644538291" class="inline-flex items-center gap-2 bg-brand text-white rounded-xl px-4 py-2.5 font-semibold text-sm hover:brightness-110 shadow-lg shadow-brand/40">📞 0644538291</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="relative overflow-hidden bg-ink text-white">
-  <div class="absolute inset-0 bg-grid opacity-40"></div>
-  <div class="absolute -top-32 -right-32 size-96 rounded-full bg-brand/30 blur-3xl"></div>
-  <div class="absolute -bottom-32 -left-32 size-96 rounded-full bg-brand/20 blur-3xl"></div>
-  <div class="relative max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <span class="inline-flex items-center gap-2 bg-brand/15 text-brand border border-brand/30 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">⚡ Velika akcija u toku</span>
-      <h1 class="font-display text-5xl md:text-7xl font-bold mt-5 leading-[0.95]">
-        Alat koji <span class="text-brand">radi</span>.<br/>
-        Cene koje <span class="text-brand">oduševljavaju</span>.
-      </h1>
-      <p class="mt-6 text-lg text-white/80 max-w-lg">Motorne testere, dizalice, paviljoni i tramboline — sve sa garancijom i dostavom kurirom širom Srbije. Plaćate gotovinom tek kada proizvod stigne.</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#proizvodi" class="inline-flex items-center gap-2 rounded-xl bg-brand text-white px-6 py-3.5 font-semibold hover:brightness-110 shadow-lg">Pogledaj proizvode →</a>
-        <a href="#kontakt" class="inline-flex items-center gap-2 rounded-xl bg-black text-white px-6 py-3.5 font-semibold hover:bg-black/85 border border-white/10">Kontaktirajte nas</a>
-      </div>
-      <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
-        <span>🛡️ Potpuna garancija</span><span>💵 Plaćanje pouzećem</span><span>🚚 Cela Srbija</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-  <div class="bg-white rounded-2xl p-5 border border-neutral-200"><div class="size-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center text-xl">🛡️</div><h3 class="font-bold mt-4">Potpuna garancija</h3><p class="text-xs text-neutral-500 mt-1">Stojimo iza svakog proizvoda.</p></div>
-  <div class="bg-white rounded-2xl p-5 border border-neutral-200"><div class="size-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center text-xl">🚚</div><h3 class="font-bold mt-4">Dostava širom Srbije</h3><p class="text-xs text-neutral-500 mt-1">Brzo i pouzdano kurirom.</p></div>
-  <div class="bg-white rounded-2xl p-5 border border-neutral-200"><div class="size-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center text-xl">💵</div><h3 class="font-bold mt-4">Plaćanje pouzećem</h3><p class="text-xs text-neutral-500 mt-1">Plaćate kuriru pri preuzimanju.</p></div>
-  <div class="bg-white rounded-2xl p-5 border border-neutral-200"><div class="size-11 rounded-xl bg-brand-soft text-brand flex items-center justify-center text-xl">⚡</div><h3 class="font-bold mt-4">Akcijske cene</h3><p class="text-xs text-neutral-500 mt-1">Bez skrivenih troškova.</p></div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="proizvodi" class="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
-  <div class="text-center mb-12 max-w-2xl mx-auto">
-    <span class="text-xs font-bold uppercase tracking-wider text-brand">Naša ponuda</span>
-    <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">4 proizvoda. <span class="text-brand">Sve na akciji.</span></h2>
-    <p class="text-neutral-500 mt-4">Pažljivo odabrana ponuda — najbolji odnos cene i kvaliteta.</p>
-  </div>
-  <div class="grid lg:grid-cols-2 gap-6">
-
-    <!-- Dizalica -->
-    <article class="relative bg-white rounded-2xl overflow-hidden shadow-card border border-neutral-200">
-      <span class="absolute top-4 left-4 z-10 bg-brand text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">NOVO</span>
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="bg-neutral-100 p-4 md:p-6 flex items-center"><div class="w-full aspect-square rounded-xl bg-white flex items-center justify-center text-neutral-400 text-sm">Slika: dizalica</div></div>
-        <div class="p-6 md:p-8 flex flex-col">
-          <h3 class="text-2xl font-bold leading-tight">Pneumatska dizalica HITMAN 3,5T</h3>
-          <p class="text-neutral-500 mt-2">Pneumatsko-hidraulična podna dizalica za teretna i putnička vozila</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Nosivost 3,5 t</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Pritisak 5–10 bara</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Min 15 cm</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Max 40 cm</span>
-          </div>
-          <p class="text-sm text-neutral-600 mt-5 leading-relaxed">Pneumatska dizalica Hitman nosivosti 3,5 tone — pokreće se komprimovanim vazduhom uz brzu spojnicu. Robustna konstrukcija, idealna za servise, vulkanizere i radionice.</p>
-          <p class="mt-3 text-sm bg-amber-50 border border-amber-200 text-amber-900 rounded-lg px-3 py-2">⚠ Dodatni crni pojas je ilustracija i ne dobija se u paketu! Sve sa garancijom i dostavom kurirom širom Srbije.</p>
-          <div class="mt-auto pt-6">
-            <div class="flex items-baseline gap-3 mb-4">
-              <span class="text-3xl font-bold">9.400 din</span>
-              <span class="text-lg text-neutral-400 line-through">12.000 din</span>
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: Inter, system-ui, sans-serif; background:#fafafa; color:#22252b; -webkit-font-smoothing: antialiased; }
+      h1,h2,h3,h4 { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em; }
+      .bg-grid {
+        background-image: linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+        background-size: 56px 56px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top" class="min-h-screen bg-background">
+      <header class="sticky top-0 z-30 backdrop-blur-md bg-background/80 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+          <a href="#top" class="flex items-center gap-2.5 group">
+            <img src="logo.png" alt="Alatshop logo" class="size-10 object-contain group-hover:scale-105 transition" />
+            <div class="leading-tight">
+              <p class="font-display font-bold text-lg tracking-tight">Alatshop</p>
+              <p class="text-[10px] text-gray-500 -mt-0.5">alatshop.online</p>
             </div>
-            <a href="tel:+381644538291" class="block text-center rounded-xl px-5 py-3.5 font-semibold bg-brand text-white hover:brightness-110 shadow-lg">📞 Naručite: 0644538291</a>
+          </a>
+          <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+            <a href="#proizvodi" class="hover:text-primary transition">Proizvodi</a>
+            <a href="#servis" class="hover:text-primary transition">Servis</a>
+            <a href="#zasto" class="hover:text-primary transition">Zašto mi</a>
+            <a href="#kontakt" class="hover:text-primary transition">Kontakt</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="relative overflow-hidden bg-ink text-white">
+        <div class="absolute inset-0 bg-grid opacity-40"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/30 blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl"></div>
+        <div class="relative max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="inline-flex items-center gap-2 bg-primary/15 text-primary border border-primary/30 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Velika akcija u toku</span>
+            <h1 class="font-display text-5xl md:text-7xl font-bold mt-5 leading-[0.95]">Alat koji <span class="text-primary">radi</span>.<br />Cene koje <span class="text-primary">oduševljavaju</span>.</h1>
+            <p class="mt-6 text-lg text-white/80 max-w-lg">Pneumatska dizalica, trimer, paviljon i tramboline — sve sa garancijom na ispravnost i dostavom kurirskom službom. Plaćate gotovinom tek kada proizvod stigne na vašu adresu.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#proizvodi" class="inline-flex items-center gap-2 rounded-xl bg-primary text-white px-6 py-3.5 font-semibold hover:brightness-110 transition shadow-lg shadow-primary/40">Pogledaj proizvode</a>
+              <a href="#kontakt" class="inline-flex items-center gap-2 rounded-xl bg-black text-white px-6 py-3.5 font-semibold hover:bg-black/85 transition border border-white/10">Kontaktirajte nas</a>
+            </div>
+            <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
+              <span class="flex items-center gap-2">Garancija na ispravnost</span>
+              <span class="flex items-center gap-2">Plaćanje pouzećem</span>
+              <span class="flex items-center gap-2">Dostava kurirskom službom</span>
+            </div>
+          </div>
+          <div class="relative hidden md:block">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white rounded-2xl p-4 shadow-2xl" style="transform: rotate(-2deg)"><img src="imagesdizalica.jpg" alt="Pneumatska dizalica HITMAN od 3.5T" class="w-full aspect-square object-contain" /></div>
+              <div class="bg-white rounded-2xl p-4 shadow-2xl" style="transform: translateY(2rem) rotate(2deg)"><img src="imagestrimer.jpg" alt="HT-GT-1542X trimer HITMAN 6.8KS" class="w-full aspect-square object-contain" /></div>
+              <div class="bg-white rounded-2xl p-4 shadow-2xl" style="transform: rotate(-2deg)"><img src="imagespaviljon.jpg" alt="Paviljon / Tenda za baštu 3x3 m" class="w-full aspect-square object-contain" /></div>
+              <div class="bg-white rounded-2xl p-4 shadow-2xl" style="transform: translateY(2rem) rotate(2deg)"><img src="imagestrambolina.jpg" alt="Trambolina Playtime sa zaštitnom mrežom i merdevinama" class="w-full aspect-square object-contain" /></div>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
+      </section>
 
-    <!-- Trimer -->
-    <article class="relative bg-white rounded-2xl overflow-hidden shadow-card border border-neutral-200">
-      <span class="absolute top-4 left-4 z-10 bg-brand text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">BEST SELLER</span>
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="bg-neutral-100 p-4 md:p-6 flex items-center"><div class="w-full aspect-square rounded-xl bg-white flex items-center justify-center text-neutral-400 text-sm">Slika: trimer</div></div>
-        <div class="p-6 md:p-8 flex flex-col">
-          <h3 class="text-2xl font-bold leading-tight">Trimer HITMAN HT-GT-1542X 6,8KS – 3u1</h3>
-          <p class="text-neutral-500 mt-2">Snažan benzinski trimer / trimer za žbunje / kosa – 3u1 set</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">6,8 KS</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">42,7 ccm</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">3u1 set</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Dvotaktni</span>
+      <section class="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-card rounded-2xl p-5 border border-border hover:border-primary/40 hover:shadow-card transition"><h3 class="font-bold">Garancija na ispravnost</h3><p class="text-xs text-muted-foreground mt-1 leading-relaxed">Garancija je na ispravnost, nije vremenska.</p></div>
+        <div class="bg-card rounded-2xl p-5 border border-border hover:border-primary/40 hover:shadow-card transition"><h3 class="font-bold">Dostava kurirskom službom</h3><p class="text-xs text-muted-foreground mt-1 leading-relaxed">Šaljemo kurirskom službom brzo i pouzdano.</p></div>
+        <div class="bg-card rounded-2xl p-5 border border-border hover:border-primary/40 hover:shadow-card transition"><h3 class="font-bold">Plaćanje pouzećem</h3><p class="text-xs text-muted-foreground mt-1 leading-relaxed">Plaćate gotovinom kuriru pri preuzimanju.</p></div>
+        <div class="bg-card rounded-2xl p-5 border border-border hover:border-primary/40 hover:shadow-card transition"><h3 class="font-bold">Akcijske cene</h3><p class="text-xs text-muted-foreground mt-1 leading-relaxed">Najbolja cena na tržištu, bez skrivenih troškova.</p></div>
+      </section>
+
+      <section id="proizvodi" class="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary">Naša ponuda</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">4 proizvoda. <span class="text-primary">Sve na akciji.</span></h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-6">
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagesdizalica.jpg" alt="Pneumatska dizalica HITMAN od 3.5T" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Pneumatska dizalica HITMAN od 3.5T</h3><p class="text-gray-500 mt-2">Brzo podizanje vozila uz stabilan i praktičan rad</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">3.5 T</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Pneumatska</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Brzo podizanje</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">HITMAN</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Pneumatska dizalica HITMAN nosivosti 3.5 tone za brzo i jednostavno podizanje vozila. Stabilna konstrukcija i praktična upotreba za radionice, vulkanizerske servise i privatne korisnike. Dodatni crni pojas je ilustracija i ne dobija se u paketu!</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">9.400 din</span></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagestrimer.jpg" alt="HT-GT-1542X trimer HITMAN 6.8KS" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">HT-GT-1542X trimer HITMAN 6.8KS</h3><p class="text-gray-500 mt-2">Snažan benzinski trimer za košenje i zahtevnije radove</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">6.8 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Benzinski</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">HITMAN</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Na stanju</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">HITMAN HT-GT-1542X benzinski trimer snage 6.8 KS namenjen za efikasno košenje trave, korova i rastinja. Praktičan izbor za dvorišta, voćnjake i zahtevnije terene.</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">7.900 din</span></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagespaviljon.jpg" alt="Paviljon / Tenda za baštu 3x3 m" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Paviljon / Tenda za baštu 3x3 m</h3><p class="text-gray-500 mt-2">Bela baštenska tenda za leto, slavlja i baštovanjem</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">3.990 din</span></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagestrambolina.jpg" alt="Trambolina Playtime sa zaštitnom mrežom i merdevinama" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Trambolina Playtime sa zaštitnom mrežom i merdevinama</h3><p class="text-gray-500 mt-2">Odaberite veličinu — cena se prilagođava</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">od 12.000 din</span></div></div></div></article>
+        </div>
+      </section>
+
+      <section id="servis" class="bg-gray-100/60 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="max-w-3xl">
+            <span class="text-xs font-bold uppercase tracking-wider text-primary">Servis</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">SERVIS BAŠTENSKIH ALATA I MOTORA 🔧</h2>
+            <p class="text-gray-500 mt-4 max-w-2xl">Vršimo profesionalan servis i popravku svih vrsta baštenskih alata i mašina sa dvotaktnim i četvorotaktnim motorima.</p>
           </div>
-          <p class="text-sm text-neutral-600 mt-5 leading-relaxed">Hitman HT-GT-1542X — moćan benzinski trimer 3u1 sa 6,8 KS. U setu glava sa najlonom, tricangla i nož za žbunje.</p>
-          <div class="mt-auto pt-6">
-            <div class="flex items-baseline gap-3 mb-4">
-              <span class="text-3xl font-bold">7.900 din</span>
-              <span class="text-lg text-neutral-400 line-through">11.000 din</span>
-            </div>
-            <a href="tel:+381644538291" class="block text-center rounded-xl px-5 py-3.5 font-semibold bg-brand text-white hover:brightness-110 shadow-lg">📞 Naručite: 0644538291</a>
+          <div class="grid md:grid-cols-2 gap-6 mt-10">
+            <div class="bg-card rounded-2xl p-7 border border-border"><h3 class="font-bold text-xl">Šta servisiramo</h3><ul class="mt-5 space-y-3 text-sm md:text-base"><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Motorne testere</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Trimeri i kosačice</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Motorne prskalice</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Freze i kultivatori</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Agregati</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Pumpe za vodu</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Duvači lišća</span></li><li class="flex gap-3"><span class="text-primary font-bold">✅</span><span>Bušači zemlje i ostali benzinski alati</span></li></ul></div>
+            <div class="bg-card rounded-2xl p-7 border border-border"><h3 class="font-bold text-xl">Usluge servisa</h3><ul class="mt-5 space-y-3 text-sm md:text-base"><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Dijagnostika kvarova</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Generalke motora</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Zamena klipa, karika i ležajeva</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Servis karburatora</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Podešavanje i čišćenje</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Zamena potrošnih delova</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Oštrenje lanca i servis vodilica</span></li><li class="flex gap-3"><span class="text-primary font-bold">✔</span><span>Priprema mašina za sezonu</span></li></ul></div>
           </div>
         </div>
-      </div>
-    </article>
+      </section>
 
-    <!-- Paviljon -->
-    <article class="relative bg-white rounded-2xl overflow-hidden shadow-card border border-neutral-200">
-      <span class="absolute top-4 left-4 z-10 bg-brand text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">BEST SELLER</span>
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="bg-neutral-100 p-4 md:p-6 flex items-center"><div class="w-full aspect-square rounded-xl bg-white flex items-center justify-center text-neutral-400 text-sm">Slika: paviljon</div></div>
-        <div class="p-6 md:p-8 flex flex-col">
-          <h3 class="text-2xl font-bold leading-tight">Paviljon / Tenda za baštu 3x3 m</h3>
-          <p class="text-neutral-500 mt-2">Bela baštenska tenda za leto, slavlja i baštu</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">300×300×250 cm</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Metal</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">PE 100 g/m²</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Bela</span>
-          </div>
-          <p class="text-sm text-neutral-600 mt-5 leading-relaxed">Praktičan paviljon 3×3 m sa belim platnom i metalnom konstrukcijom. Stopice, kanap i klinovi u paketu.</p>
-          <div class="mt-auto pt-6">
-            <div class="flex items-baseline gap-3 mb-4">
-              <span class="text-3xl font-bold">3.990 din</span>
-              <span class="text-lg text-neutral-400 line-through">5.500 din</span>
-            </div>
-            <a href="tel:+381644538291" class="block text-center rounded-xl px-5 py-3.5 font-semibold bg-brand text-white hover:brightness-110 shadow-lg">📞 Naručite: 0644538291</a>
+      <section id="zasto" class="bg-muted/40 py-16 md:py-24">
+        <div class="max-w-5xl mx-auto px-4 md:px-8 text-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary">Zašto Alatshop</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">Kupujete bez brige. Mi se brinemo za ostalo.</h2>
+          <div class="grid md:grid-cols-3 gap-6 mt-12 text-left">
+            <div class="bg-card rounded-2xl p-7 border border-border"><span class="text-5xl font-display font-bold text-primary/30">01</span><h3 class="font-bold text-xl mt-3">Naručite klikom</h3><p class="text-sm text-gray-500 mt-2 leading-relaxed">Dodajte proizvode u korpu, popunite podatke i pošaljite porudžbinu.</p></div>
+            <div class="bg-card rounded-2xl p-7 border border-border"><span class="text-5xl font-display font-bold text-primary/30">02</span><h3 class="font-bold text-xl mt-3">Mi šaljemo kurirom</h3><p class="text-sm text-gray-500 mt-2 leading-relaxed">Pakujemo i predajemo kurirskoj službi u najkraćem roku.</p></div>
+            <div class="bg-card rounded-2xl p-7 border border-border"><span class="text-5xl font-display font-bold text-primary/30">03</span><h3 class="font-bold text-xl mt-3">Plaćate kuriru</h3><p class="text-sm text-gray-500 mt-2 leading-relaxed">Tek kada proizvod stigne, plaćate gotovinom pri preuzimanju.</p></div>
           </div>
         </div>
-      </div>
-    </article>
+      </section>
 
-    <!-- Trambolina -->
-    <article class="relative bg-white rounded-2xl overflow-hidden shadow-card border border-neutral-200">
-      <span class="absolute top-4 left-4 z-10 bg-brand text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">4 VELIČINE</span>
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="bg-neutral-100 p-4 md:p-6 flex items-center"><div class="w-full aspect-square rounded-xl bg-white flex items-center justify-center text-neutral-400 text-sm">Slika: trambolina</div></div>
-        <div class="p-6 md:p-8 flex flex-col">
-          <h3 class="text-2xl font-bold leading-tight">Trambolina Playtime sa zaštitnom mrežom i merdevinama</h3>
-          <p class="text-neutral-500 mt-2">Odaberite veličinu — cena se prilagođava</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">183 / 244 / 305 / 366 cm</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">Galvanizovani čelik</span>
-            <span class="text-xs font-medium bg-brand-soft text-brand px-2.5 py-1 rounded-md">3+ god</span>
+      <section id="kontakt" class="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-primary">Kontakt</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">Imate pitanje? <br /><span class="text-primary">Tu smo za vas.</span></h2>
+          <p class="text-gray-500 mt-4 max-w-md">Pišite nam ili pozovite — odgovaramo brzo, savetujemo iskreno i pomažemo da odaberete pravi proizvod.</p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center gap-4"><div class="size-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">📞</div><div><p class="text-xs text-gray-500">Telefon</p><a href="tel:+381644538291" class="font-semibold hover:text-primary">+381 64 4538291</a></div></li>
+            <li class="flex items-center gap-4"><div class="size-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">✉️</div><div><p class="text-xs text-gray-500">Email</p><a href="mailto:milanmili7603@gmail.com" class="font-semibold hover:text-primary">milanmili7603@gmail.com</a></div></li>
+            <li class="flex items-center gap-4"><div class="size-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">📍</div><div><p class="text-xs text-gray-500">Lokacija</p><p class="font-semibold">Subotica, Srbija</p></div></li>
+          </ul>
+        </div>
+        <div class="space-y-3 bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border">
+          <h3 class="text-2xl font-bold mb-1">Pošaljite nam pitanje</h3>
+          <p class="text-sm text-gray-500 mb-4">Odgovaramo brzo, obično u roku od nekoliko sati.</p>
+          <input placeholder="Vaše ime" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <input placeholder="Email" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
+            <input placeholder="Telefon (opciono)" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
           </div>
-          <p class="text-sm text-neutral-600 mt-5 leading-relaxed">Playtime trambolina sa zaštitnom mrežom, obloženim stubovima i merdevinama. Galvanizovana čelična konstrukcija.</p>
-          <div class="mt-auto pt-6">
-            <ul class="text-sm space-y-1 mb-4">
-              <li class="flex justify-between border-b border-neutral-100 py-1"><span>183 cm</span><b>12.000 din</b></li>
-              <li class="flex justify-between border-b border-neutral-100 py-1"><span>244 cm</span><b>15.000 din</b></li>
-              <li class="flex justify-between border-b border-neutral-100 py-1"><span>305 cm</span><b>17.000 din</b></li>
-              <li class="flex justify-between py-1"><span>366 cm</span><b>30.000 din</b></li>
+          <textarea rows="5" placeholder="Vaše pitanje..." class="w-full rounded-lg border border-input px-4 py-3 bg-background resize-none"></textarea>
+          <button class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-ink text-white py-3.5 font-semibold">Pošalji pitanje</button>
+        </div>
+      </section>
+
+      <footer class="bg-ink text-white mt-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-14 grid md:grid-cols-3 gap-10">
+          <div>
+            <h3 class="font-display text-2xl font-bold">Alatshop</h3>
+            <p class="text-sm text-white/70 mt-2 max-w-xs">Kvalitetan alat i oprema sa garancijom na ispravnost. Brza dostava kurirskom službom širom Srbije.</p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3">Kontakt</h4>
+            <ul class="space-y-2.5 text-sm text-white/80">
+              <li><a href="tel:+381644538291" class="hover:text-primary">+381 64 4538291</a></li>
+              <li><a href="mailto:milanmili7603@gmail.com" class="hover:text-primary">milanmili7603@gmail.com</a></li>
+              <li>Subotica, Srbija</li>
             </ul>
-            <a href="tel:+381644538291" class="block text-center rounded-xl px-5 py-3.5 font-semibold bg-brand text-white hover:brightness-110 shadow-lg">📞 Naručite: 0644538291</a>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3">Informacije</h4>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>Plaćanje pouzećem (cash)</li>
+              <li>Dostava kurirskom službom</li>
+              <li>Trošak dostave plaća kupac</li>
+              <li>Garancija je na ispravnost, nije vremenska</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- SERVIS -->
-<section id="servis" class="bg-ink text-white py-16 md:py-24 relative overflow-hidden">
-  <div class="absolute inset-0 bg-grid opacity-30"></div>
-  <div class="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-brand/15 blur-3xl"></div>
-  <div class="relative max-w-6xl mx-auto px-4 md:px-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <span class="text-xs font-bold uppercase tracking-wider text-brand">Servis</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">SERVIS BAŠTENSKIH ALATA I MOTORA <span class="text-brand">🔧</span></h2>
-      <p class="mt-5 text-white/80 text-lg">Vršimo profesionalan servis i popravku svih vrsta baštenskih alata i mašina sa dvotaktnim i četvorotaktnim motorima.</p>
+        <div class="border-t border-white/10 py-5 text-center text-xs text-white/50">© 2026 Alatshop · alatshop.online<br />www.silverdao.pro — site maintenance</div>
+      </footer>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 mt-12">
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
-        <h3 class="font-display font-bold text-xl mb-5 text-brand">Šta servisiramo</h3>
-        <ul class="space-y-2.5 text-white/85">
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Motorne testere</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Trimeri i kosačice</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Motorne prskalice</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Freze i kultivatori</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Agregati</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Pumpe za vodu</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Duvači lišća</span></li>
-          <li class="flex gap-3"><span class="text-green-400">✅</span><span>Bušači zemlje i ostali benzinski alati</span></li>
-        </ul>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
-        <h3 class="font-display font-bold text-xl mb-5 text-brand">Usluge servisa</h3>
-        <ul class="space-y-2.5 text-white/85">
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Dijagnostika kvarova</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Generalke motora</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Zamena klipa, karika i ležajeva</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Servis karburatora</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Podešavanje i čišćenje</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Zamena potrošnih delova</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Oštrenje lanca i servis vodilica</span></li>
-          <li class="flex gap-3"><span class="text-brand">✔</span><span>Priprema mašina za sezonu</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 text-center">
-      <p class="text-white/85 text-lg">Brzo, korektno i povoljno. <span class="text-white/60">Moguć dogovor za hitne intervencije.</span></p>
-      <a href="tel:+381644538291" class="inline-flex items-center gap-2 mt-6 rounded-xl bg-brand text-white px-7 py-4 font-semibold hover:brightness-110 shadow-glow">📞 Pozovite za servis: 0644538291</a>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section id="zasto" class="bg-neutral-100 py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-4 md:px-8 text-center">
-    <span class="text-xs font-bold uppercase tracking-wider text-brand">Zašto Alatshop</span>
-    <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">Kupujete bez brige. Mi se brinemo za ostalo.</h2>
-    <div class="grid md:grid-cols-3 gap-6 mt-12 text-left">
-      <div class="bg-white rounded-2xl p-7 border border-neutral-200"><span class="text-5xl font-display font-bold text-brand/30">01</span><h3 class="font-bold text-xl mt-3">Naručite klikom</h3><p class="text-sm text-neutral-500 mt-2">Pozovite ili pošaljite poruku, mi vas savetujemo.</p></div>
-      <div class="bg-white rounded-2xl p-7 border border-neutral-200"><span class="text-5xl font-display font-bold text-brand/30">02</span><h3 class="font-bold text-xl mt-3">Mi šaljemo kurirom</h3><p class="text-sm text-neutral-500 mt-2">Pakujemo i predajemo kuriru u najkraćem roku.</p></div>
-      <div class="bg-white rounded-2xl p-7 border border-neutral-200"><span class="text-5xl font-display font-bold text-brand/30">03</span><h3 class="font-bold text-xl mt-3">Plaćate kuriru</h3><p class="text-sm text-neutral-500 mt-2">Gotovinom pri preuzimanju paketa.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="kontakt" class="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-start">
-  <div>
-    <span class="text-xs font-bold uppercase tracking-wider text-brand">Kontakt</span>
-    <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">Imate pitanje?<br/><span class="text-brand">Tu smo za vas.</span></h2>
-    <p class="text-neutral-500 mt-4 max-w-md">Pišite nam ili pozovite — odgovaramo brzo, savetujemo iskreno.</p>
-    <ul class="mt-8 space-y-4">
-      <li class="flex items-center gap-4"><span class="size-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-xl">📞</span><div><p class="text-xs text-neutral-500">Telefon</p><a href="tel:+381644538291" class="font-semibold hover:text-brand">0644538291</a></div></li>
-      <li class="flex items-center gap-4"><span class="size-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-xl">✉️</span><div><p class="text-xs text-neutral-500">Email</p><a href="mailto:milanmili7603@gmail.com" class="font-semibold hover:text-brand">milanmili7603@gmail.com</a></div></li>
-      <li class="flex items-center gap-4"><span class="size-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-xl">📍</span><div><p class="text-xs text-neutral-500">Lokacija</p><p class="font-semibold">Subotica, Srbija</p></div></li>
-    </ul>
-  </div>
-  <form action="https://formsubmit.co/milanmili7603@gmail.com" method="POST" class="space-y-3 bg-white rounded-2xl p-6 md:p-8 shadow-card border border-neutral-200">
-    <input type="hidden" name="_subject" value="📩 Pitanje sa sajta Alatshop" />
-    <input type="hidden" name="_template" value="table" />
-    <h3 class="text-2xl font-bold mb-1">Pošaljite nam pitanje</h3>
-    <p class="text-sm text-neutral-500 mb-4">Odgovaramo brzo, obično u roku od nekoliko sati.</p>
-    <input required name="name" placeholder="Vaše ime" class="w-full rounded-lg border border-neutral-200 px-4 py-3 outline-none focus:border-brand"/>
-    <div class="grid md:grid-cols-2 gap-3">
-      <input required type="email" name="email" placeholder="Email" class="w-full rounded-lg border border-neutral-200 px-4 py-3 outline-none focus:border-brand"/>
-      <input type="tel" name="phone" placeholder="Telefon (opciono)" class="w-full rounded-lg border border-neutral-200 px-4 py-3 outline-none focus:border-brand"/>
-    </div>
-    <textarea required rows="5" name="message" placeholder="Vaše pitanje..." class="w-full rounded-lg border border-neutral-200 px-4 py-3 outline-none focus:border-brand resize-none"></textarea>
-    <button class="w-full rounded-xl bg-ink text-white py-3.5 font-semibold hover:opacity-90">Pošalji pitanje</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-ink text-white/70 py-10">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between gap-4 text-sm">
-    <p>© <script>document.write(new Date().getFullYear())</script> Alatshop.online — Subotica, Srbija</p>
-    <p>Plaćanje pouzećem • Dostava širom Srbije</p>
-  </div>
-  <div class="max-w-7xl mx-auto px-4 md:px-8 mt-6 pt-6 border-t border-white/10 text-center text-xs text-white/50">
-    <a href="https://www.silverdao.pro" target="_blank" rel="noopener" class="hover:text-white">www.silverdao.pro</a> — site maintenance
-  </div>
-</footer>
-
-</body>
+  </body>
 </html>
