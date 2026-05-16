@@ -70,6 +70,9 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
         background-image: linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
         background-size: 56px 56px;
       }
+      .cart-drawer { transition: transform .3s ease; }
+      .cart-hidden { transform: translateX(100%); }
+      .overlay-hidden { opacity: 0; pointer-events: none; }
     </style>
   </head>
   <body>
@@ -89,6 +92,10 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
             <a href="#zasto" class="hover:text-primary transition">Zašto mi</a>
             <a href="#kontakt" class="hover:text-primary transition">Kontakt</a>
           </nav>
+          <button id="cart-button" class="relative inline-flex items-center gap-2 rounded-xl bg-primary text-white px-4 py-2 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30">
+            🛒 <span class="hidden sm:inline">Korpa</span>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-ink text-white text-xs font-bold rounded-full size-6 flex items-center justify-center border-2 border-background">0</span>
+          </button>
         </div>
       </header>
 
@@ -135,13 +142,13 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
           <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">7 proizvoda. <span class="text-primary">Sve na akciji.</span></h2>
         </div>
         <div class="grid lg:grid-cols-2 gap-6">
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagesdizalica.jpg" alt="Pneumatska dizalica HITMAN od 3.5T" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Pneumatska dizalica HITMAN od 3.5T</h3><p class="text-gray-500 mt-2">Brzo podizanje vozila uz stabilan i praktičan rad</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">3.5 T</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Pneumatska</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Brzo podizanje</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">HITMAN</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Pneumatska dizalica HITMAN nosivosti 3.5 tone za brzo i jednostavno podizanje vozila. Stabilna konstrukcija i praktična upotreba za radionice, vulkanizerske servise i privatne korisnike. Dodatni crni pojas je ilustracija i ne dobija se u paketu!</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">9.400 din</span></div></div></div></article>
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagestrimer.jpg" alt="HT-GT-1542X trimer HITMAN 6.8KS" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">HT-GT-1542X trimer HITMAN 6.8KS</h3><p class="text-gray-500 mt-2">Snažan benzinski trimer za košenje i zahtevnije radove</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">6.8 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Benzinski</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">HITMAN</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Na stanju</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">HITMAN HT-GT-1542X benzinski trimer snage 6.8 KS namenjen za efikasno košenje trave, korova i rastinja. Praktičan izbor za dvorišta, voćnjake i zahtevnije terene.</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">7.900 din</span></div></div></div></article>
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagespaviljon.jpg" alt="Paviljon / Tenda za baštu 3x3 m" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Paviljon / Tenda za baštu 3x3 m</h3><p class="text-gray-500 mt-2">Bela baštenska tenda za leto, slavlja i baštovanjem</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">3.990 din</span></div></div></div></article>
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagestrambolina.jpg" alt="Trambolina Playtime sa zaštitnom mrežom i merdevinama" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Trambolina Playtime sa zaštitnom mrežom i merdevinama</h3><p class="text-gray-500 mt-2">Odaberite veličinu — cena se prilagođava</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">od 12.000 din</span></div></div></div></article>
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="96740784-3735-4aba-acd0-0d0a7605a1dd.webp" alt="Mastermax 5200 motorna testera" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Mastermax 5200 motorna testera</h3><p class="text-gray-500 mt-2">Idealna za pripremu ogreva i sečenje veće količine drva</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">2.1 kW / 2.7 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Mač 40 cm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">52 ccm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Anti-vibracioni sistem</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Mastermax 5200 motorna testera, idealna za one koji pripremaju ogrev za sezonu grejanja, kao i za one koji imaju potrebu za sečenjem veće količine drva. Snaga: 2.1 kW / 2.7 KS, dužina mača 40 cm (korak 0.325, 32 zuba), zapremina motora 52 ccm, maksimalni broj obrtaja 13.500 o/min, sistem protiv vibracija, težina 5.5 kg.</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">8.850 din</span></div></div></div></article>
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="441e2300-b4bd-4f61-b404-9ab62b34a3b8.jpeg" alt="Villager motorna kosačica T6 OHV 146cc" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Villager motorna kosačica T6 OHV 146cc</h3><p class="text-gray-500 mt-2">Moćna benzinska kosačica sa čeličnim kućištem — garancija 3 godine</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">2.6 kW</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">146 ccm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Širina 420 mm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Korpa 40 L</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Novi dizajn motorne kosačice za travu sa integrisanim ležajevima u točkovima. Motor T6 OHV 146 ccm (2.6 kW, 2800 rpm). Površina košenja 800 m², širina 420 mm, visina košenja 25–70 mm u 6 nivoa (centralno). Funkcije: košenje, malčiranje i sakupljanje. Čelično kućište, gurajući pogon, točkovi 152/254 mm, sakupljač 40 L. Težina pakovanja 25.89 kg. Garancija 3 godine.</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">19.900 din</span></div></div></div></article>
-          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="Template 10 year warranty - battery and charger gift (8)-1753807339870.png" alt="Motorna kosačica Scheppach MP132-42 3.3KS" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Motorna kosačica 3.3KS Scheppach MP132-42</h3><p class="text-gray-500 mt-2">Kompaktna i manevarska benzinska kosilica, idealna za male bašte</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">3.3 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">4-taktni</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Širina 42 cm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Korpa 45 L</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Scheppach motorna kosačica 3.3KS MP132-42 sa snažnim 4-taktnim benzinskim motorom i čvrstim čeličnim kućištem. Najkompaktnija benzinska kosilica za travu — zgodna i manevarska, idealna za male bašte. Udobna ručka i veliki točkovi sa kugličnim ležajevima. Širina košenja 42 cm. Integrisana funkcija čišćenja sa priključkom za vodu. Robusna korpa za sakupljanje 45 L sa indikatorom nivoa. Sklopiva ručka za lako skladištenje. Centralno podešavanje visine košenja u 7 nivoa (25–75 mm).</p><div class="mt-auto pt-6"><span class="text-3xl font-bold text-foreground">19.900 din</span></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagesdizalica.jpg" alt="Pneumatska dizalica HITMAN od 3.5T" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Pneumatska dizalica HITMAN od 3.5T</h3><p class="text-gray-500 mt-2">Brzo podizanje vozila uz stabilan i praktičan rad</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">3.5 T</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Pneumatska</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Brzo podizanje</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">HITMAN</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Pneumatska dizalica HITMAN nosivosti 3.5 tone za brzo i jednostavno podizanje vozila. Stabilna konstrukcija i praktična upotreba za radionice, vulkanizerske servise i privatne korisnike. Dodatni crni pojas je ilustracija i ne dobija se u paketu!</p><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">9.400 din</span><button class="add-to-cart inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30" data-name="Pneumatska dizalica HITMAN od 3.5T" data-price="9400">Dodaj u korpu</button></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagestrimer.jpg" alt="HT-GT-1542X trimer HITMAN 6.8KS" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">HT-GT-1542X trimer HITMAN 6.8KS</h3><p class="text-gray-500 mt-2">Snažan benzinski trimer za košenje i zahtevnije radove</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">6.8 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Benzinski</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">HITMAN</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Na stanju</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">HITMAN HT-GT-1542X benzinski trimer snage 6.8 KS namenjen za efikasno košenje trave, korova i rastinja. Praktičan izbor za dvorišta, voćnjake i zahtevnije terene.</p><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">7.900 din</span><button class="add-to-cart inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30" data-name="HT-GT-1542X trimer HITMAN 6.8KS" data-price="7900">Dodaj u korpu</button></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagespaviljon.jpg" alt="Paviljon / Tenda za baštu 3x3 m" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Paviljon / Tenda za baštu 3x3 m</h3><p class="text-gray-500 mt-2">Bela baštenska tenda za leto, slavlja i baštovanjem</p><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">3.990 din</span><button class="add-to-cart inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30" data-name="Paviljon / Tenda za baštu 3x3 m" data-price="3990">Dodaj u korpu</button></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="imagestrambolina.jpg" alt="Trambolina Playtime sa zaštitnom mrežom i merdevinama" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Trambolina Playtime sa zaštitnom mrežom i merdevinama</h3><p class="text-gray-500 mt-2">Odaberite veličinu — cena se prilagođava</p><div class="mt-4"><label class="text-xs font-semibold text-gray-600 uppercase tracking-wider">Veličina</label><select id="trambolina-size" class="mt-1 w-full rounded-lg border border-input px-3 py-2 bg-background font-medium"><option value="140 cm|12000">140 cm — 12.000 din</option><option value="180 cm|14500">180 cm — 14.500 din</option><option value="244 cm|18900">244 cm — 18.900 din</option><option value="305 cm|24900">305 cm — 24.900 din</option></select></div><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">od 12.000 din</span><button id="trambolina-add" class="inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30">Dodaj u korpu</button></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="96740784-3735-4aba-acd0-0d0a7605a1dd.webp" alt="Mastermax 5200 motorna testera" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Mastermax 5200 motorna testera</h3><p class="text-gray-500 mt-2">Idealna za pripremu ogreva i sečenje veće količine drva</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">2.1 kW / 2.7 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Mač 40 cm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">52 ccm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Anti-vibracioni sistem</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Mastermax 5200 motorna testera, idealna za one koji pripremaju ogrev za sezonu grejanja, kao i za one koji imaju potrebu za sečenjem veće količine drva. Snaga: 2.1 kW / 2.7 KS, dužina mača 40 cm (korak 0.325, 32 zuba), zapremina motora 52 ccm, maksimalni broj obrtaja 13.500 o/min, sistem protiv vibracija, težina 5.5 kg.</p><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">8.850 din</span><button class="add-to-cart inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30" data-name="Mastermax 5200 motorna testera" data-price="8850">Dodaj u korpu</button></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="441e2300-b4bd-4f61-b404-9ab62b34a3b8.jpeg" alt="Villager motorna kosačica T6 OHV 146cc" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Villager motorna kosačica T6 OHV 146cc</h3><p class="text-gray-500 mt-2">Moćna benzinska kosačica sa čeličnim kućištem — garancija 3 godine</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">2.6 kW</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">146 ccm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Širina 420 mm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Korpa 40 L</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Novi dizajn motorne kosačice za travu sa integrisanim ležajevima u točkovima. Motor T6 OHV 146 ccm (2.6 kW, 2800 rpm). Površina košenja 800 m², širina 420 mm, visina košenja 25–70 mm u 6 nivoa (centralno). Funkcije: košenje, malčiranje i sakupljanje. Čelično kućište, gurajući pogon, točkovi 152/254 mm, sakupljač 40 L. Težina pakovanja 25.89 kg. Garancija 3 godine.</p><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">19.900 din</span><button class="add-to-cart inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30" data-name="Villager motorna kosačica T6 OHV 146cc" data-price="19900">Dodaj u korpu</button></div></div></div></article>
+          <article class="bg-card rounded-2xl overflow-hidden shadow-card border border-border/60"><div class="grid md:grid-cols-2"><div class="bg-gray-100/60 p-6"><img src="Template 10 year warranty - battery and charger gift (8)-1753807339870.png" alt="Motorna kosačica Scheppach MP132-42 3.3KS" class="w-full aspect-square object-contain bg-white rounded-xl" /></div><div class="p-6 md:p-8 flex flex-col"><h3 class="text-2xl font-bold">Motorna kosačica 3.3KS Scheppach MP132-42</h3><p class="text-gray-500 mt-2">Kompaktna i manevarska benzinska kosilica, idealna za male bašte</p><div class="flex flex-wrap gap-2 mt-4"><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">3.3 KS</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">4-taktni</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Širina 42 cm</span><span class="text-xs font-medium bg-accent text-red-800 px-2.5 py-1 rounded-md">Korpa 45 L</span></div><p class="text-sm text-gray-500 mt-5 leading-relaxed">Scheppach motorna kosačica 3.3KS MP132-42 sa snažnim 4-taktnim benzinskim motorom i čvrstim čeličnim kućištem. Najkompaktnija benzinska kosilica za travu — zgodna i manevarska, idealna za male bašte. Udobna ručka i veliki točkovi sa kugličnim ležajevima. Širina košenja 42 cm. Integrisana funkcija čišćenja sa priključkom za vodu. Robusna korpa za sakupljanje 45 L sa indikatorom nivoa. Sklopiva ručka za lako skladištenje. Centralno podešavanje visine košenja u 7 nivoa (25–75 mm).</p><div class="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap"><span class="text-3xl font-bold text-foreground">19.900 din</span><button class="add-to-cart inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30" data-name="Motorna kosačica 3.3KS Scheppach MP132-42" data-price="19900">Dodaj u korpu</button></div></div></div></article>
         </div>
       </section>
 
@@ -182,17 +189,18 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
             <li class="flex items-center gap-4"><div class="size-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">📍</div><div><p class="text-xs text-gray-500">Lokacija</p><p class="font-semibold">Subotica, Srbija</p></div></li>
           </ul>
         </div>
-        <div class="space-y-3 bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border">
+        <form id="contact-form" class="space-y-3 bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border">
           <h3 class="text-2xl font-bold mb-1">Pošaljite nam pitanje</h3>
           <p class="text-sm text-gray-500 mb-4">Odgovaramo brzo, obično u roku od nekoliko sati.</p>
-          <input placeholder="Vaše ime" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
+          <input name="ime" required placeholder="Vaše ime *" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input placeholder="Email" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
-            <input placeholder="Telefon (opciono)" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
+            <input name="email" type="email" required placeholder="Email *" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
+            <input name="telefon" type="tel" placeholder="Telefon (opciono)" class="w-full rounded-lg border border-input px-4 py-3 bg-background" />
           </div>
-          <textarea rows="5" placeholder="Vaše pitanje..." class="w-full rounded-lg border border-input px-4 py-3 bg-background resize-none"></textarea>
-          <button class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-ink text-white py-3.5 font-semibold">Pošalji pitanje</button>
-        </div>
+          <textarea name="poruka" required rows="5" placeholder="Vaše pitanje... *" class="w-full rounded-lg border border-input px-4 py-3 bg-background resize-none"></textarea>
+          <button type="submit" id="contact-submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-ink text-white py-3.5 font-semibold hover:bg-black transition disabled:opacity-60">Pošalji pitanje</button>
+          <p id="contact-status" class="text-sm text-center mt-2 hidden"></p>
+        </form>
       </section>
 
       <footer class="bg-ink text-white mt-20">
@@ -223,8 +231,40 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
       </footer>
     </div>
 
+    <!-- ===== CART DRAWER ===== -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 overlay-hidden transition-opacity duration-300"></div>
+    <aside id="cart-drawer" class="cart-drawer cart-hidden fixed top-0 right-0 h-full w-full sm:w-[460px] bg-white z-50 shadow-2xl flex flex-col">
+      <div class="flex items-center justify-between p-5 border-b border-border">
+        <h3 class="font-display font-bold text-2xl">Vaša korpa</h3>
+        <button id="cart-close" class="size-9 rounded-lg hover:bg-muted flex items-center justify-center text-xl">✕</button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-3">
+        <p id="cart-empty" class="text-center text-gray-500 py-12">Korpa je prazna.</p>
+      </div>
+      <div id="cart-checkout-area" class="border-t border-border p-5 space-y-3 max-h-[60vh] overflow-y-auto">
+        <div class="flex justify-between text-lg font-bold">
+          <span>Ukupno:</span>
+          <span id="cart-total">0 din</span>
+        </div>
+        <p class="text-xs text-gray-500">+ trošak dostave (plaća kupac kuriru) • Plaćanje pouzećem</p>
+        <form id="order-form" class="space-y-2.5 pt-2">
+          <input name="ime_prezime" required placeholder="Ime i prezime *" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm" />
+          <input name="telefon" type="tel" required placeholder="Telefon *" pattern="[0-9+\s\-/()]{6,}" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm" />
+          <input name="email" type="email" required placeholder="Email *" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm" />
+          <input name="adresa" required placeholder="Adresa (ulica i broj) *" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm" />
+          <div class="grid grid-cols-2 gap-2">
+            <input name="grad" required placeholder="Grad *" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm" />
+            <input name="postanski_broj" required placeholder="Poštanski broj *" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm" />
+          </div>
+          <textarea name="napomena" rows="2" placeholder="Napomena (opciono)" class="w-full rounded-lg border border-input px-4 py-2.5 bg-background text-sm resize-none"></textarea>
+          <button type="submit" id="order-submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white py-3 font-semibold hover:brightness-110 transition shadow-md shadow-primary/30 disabled:opacity-60">Pošalji porudžbinu</button>
+          <p id="order-status" class="text-sm text-center hidden"></p>
+        </form>
+      </div>
+    </aside>
+
     <!-- Floating contact buttons: WhatsApp + Viber -->
-    <div class="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+    <div class="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
       <a href="https://wa.me/381644538291" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
          class="size-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition"
          style="background:#25D366;">
@@ -240,5 +280,195 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
         </svg>
       </a>
     </div>
+
+    <!-- ===== CART + EMAIL SCRIPT ===== -->
+    <script>
+      // ---- Config ----
+      const EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/milanmili7603@gmail.com';
+      const fmt = n => n.toLocaleString('sr-RS') + ' din';
+
+      // ---- Cart state ----
+      let cart = [];
+      try { cart = JSON.parse(localStorage.getItem('alatshop_cart') || '[]'); } catch(e){ cart = []; }
+
+      const $ = id => document.getElementById(id);
+      const saveCart = () => localStorage.setItem('alatshop_cart', JSON.stringify(cart));
+
+      function renderCart() {
+        const list = $('cart-items');
+        const empty = $('cart-empty');
+        list.innerHTML = '';
+        if (!cart.length) {
+          list.appendChild(empty);
+          empty.classList.remove('hidden');
+        } else {
+          cart.forEach((it, i) => {
+            const row = document.createElement('div');
+            row.className = 'flex items-center gap-3 bg-muted/50 rounded-xl p-3';
+            row.innerHTML = `
+              <div class="flex-1 min-w-0">
+                <p class="font-semibold text-sm truncate">${it.name}</p>
+                <p class="text-xs text-gray-500">${fmt(it.price)} × ${it.qty} = <strong>${fmt(it.price * it.qty)}</strong></p>
+              </div>
+              <div class="flex items-center gap-1">
+                <button data-act="dec" data-i="${i}" class="size-7 rounded-md bg-white border border-border hover:bg-muted">−</button>
+                <span class="w-6 text-center text-sm font-semibold">${it.qty}</span>
+                <button data-act="inc" data-i="${i}" class="size-7 rounded-md bg-white border border-border hover:bg-muted">+</button>
+                <button data-act="del" data-i="${i}" class="size-7 rounded-md text-red-600 hover:bg-red-50 ml-1">✕</button>
+              </div>`;
+            list.appendChild(row);
+          });
+        }
+        const total = cart.reduce((s, it) => s + it.price * it.qty, 0);
+        const count = cart.reduce((s, it) => s + it.qty, 0);
+        $('cart-total').textContent = fmt(total);
+        $('cart-count').textContent = count;
+        $('order-submit').disabled = count === 0;
+      }
+
+      function addToCart(name, price) {
+        const found = cart.find(x => x.name === name && x.price === price);
+        if (found) found.qty += 1; else cart.push({ name, price, qty: 1 });
+        saveCart(); renderCart(); openCart();
+      }
+
+      function openCart() {
+        $('cart-drawer').classList.remove('cart-hidden');
+        $('cart-overlay').classList.remove('overlay-hidden');
+      }
+      function closeCart() {
+        $('cart-drawer').classList.add('cart-hidden');
+        $('cart-overlay').classList.add('overlay-hidden');
+      }
+
+      // ---- Wire product buttons ----
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          addToCart(btn.dataset.name, parseInt(btn.dataset.price, 10));
+        });
+      });
+
+      // Trambolina (with size)
+      $('trambolina-add').addEventListener('click', () => {
+        const sel = $('trambolina-size');
+        const [size, price] = sel.value.split('|');
+        addToCart('Trambolina Playtime ' + size, parseInt(price, 10));
+      });
+
+      // ---- Cart UI ----
+      $('cart-button').addEventListener('click', openCart);
+      $('cart-close').addEventListener('click', closeCart);
+      $('cart-overlay').addEventListener('click', closeCart);
+      $('cart-items').addEventListener('click', e => {
+        const b = e.target.closest('button[data-act]');
+        if (!b) return;
+        const i = parseInt(b.dataset.i, 10);
+        if (b.dataset.act === 'inc') cart[i].qty += 1;
+        else if (b.dataset.act === 'dec') { cart[i].qty -= 1; if (cart[i].qty < 1) cart.splice(i, 1); }
+        else if (b.dataset.act === 'del') cart.splice(i, 1);
+        saveCart(); renderCart();
+      });
+
+      // ---- Order submit ----
+      $('order-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!cart.length) { alert('Korpa je prazna.'); return; }
+        const form = e.target;
+        if (!form.reportValidity()) return;
+
+        const fd = new FormData(form);
+        const total = cart.reduce((s, it) => s + it.price * it.qty, 0);
+        const itemsText = cart.map(it => `• ${it.name} — ${it.qty} kom × ${fmt(it.price)} = ${fmt(it.price * it.qty)}`).join('\n');
+
+        const payload = {
+          _subject: 'NOVA PORUDŽBINA — Alatshop.online',
+          _template: 'table',
+          _captcha: 'false',
+          'Ime i prezime': fd.get('ime_prezime'),
+          'Telefon': fd.get('telefon'),
+          'Email': fd.get('email'),
+          'Adresa': fd.get('adresa'),
+          'Grad': fd.get('grad'),
+          'Poštanski broj': fd.get('postanski_broj'),
+          'Napomena': fd.get('napomena') || '-',
+          'Proizvodi': '\n' + itemsText,
+          'UKUPNO (bez dostave)': fmt(total),
+          'Plaćanje': 'Pouzećem (gotovinom kuriru)',
+        };
+
+        const btn = $('order-submit');
+        const status = $('order-status');
+        btn.disabled = true; btn.textContent = 'Slanje...';
+        status.classList.add('hidden');
+
+        try {
+          const r = await fetch(EMAIL_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await r.json().catch(() => ({}));
+          if (r.ok && (data.success === 'true' || data.success === true)) {
+            status.textContent = '✓ Porudžbina je poslata! Kontaktiraćemo vas uskoro.';
+            status.className = 'text-sm text-center text-green-600 font-semibold mt-2';
+            cart = []; saveCart(); renderCart();
+            form.reset();
+            if (typeof fbq === 'function') fbq('track', 'Purchase', { value: total, currency: 'RSD' });
+          } else {
+            throw new Error(data.message || 'Greška na serveru');
+          }
+        } catch (err) {
+          status.textContent = '✗ Slanje nije uspelo. Pozovite nas: +381 64 4538291';
+          status.className = 'text-sm text-center text-red-600 font-semibold mt-2';
+        } finally {
+          status.classList.remove('hidden');
+          btn.disabled = false; btn.textContent = 'Pošalji porudžbinu';
+        }
+      });
+
+      // ---- Contact form submit ----
+      $('contact-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        if (!form.reportValidity()) return;
+        const fd = new FormData(form);
+        const payload = {
+          _subject: 'Novo pitanje sa sajta — Alatshop.online',
+          _template: 'table',
+          _captcha: 'false',
+          'Ime': fd.get('ime'),
+          'Email': fd.get('email'),
+          'Telefon': fd.get('telefon') || '-',
+          'Poruka': fd.get('poruka'),
+        };
+        const btn = $('contact-submit');
+        const status = $('contact-status');
+        btn.disabled = true; btn.textContent = 'Slanje...';
+        status.classList.add('hidden');
+        try {
+          const r = await fetch(EMAIL_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await r.json().catch(() => ({}));
+          if (r.ok && (data.success === 'true' || data.success === true)) {
+            status.textContent = '✓ Poruka je poslata! Odgovaramo uskoro.';
+            status.className = 'text-sm text-center text-green-600 font-semibold mt-2';
+            form.reset();
+          } else {
+            throw new Error(data.message || 'Greška');
+          }
+        } catch (err) {
+          status.textContent = '✗ Slanje nije uspelo. Pozovite nas: +381 64 4538291';
+          status.className = 'text-sm text-center text-red-600 font-semibold mt-2';
+        } finally {
+          status.classList.remove('hidden');
+          btn.disabled = false; btn.textContent = 'Pošalji pitanje';
+        }
+      });
+
+      renderCart();
+    </script>
   </body>
 </html>
