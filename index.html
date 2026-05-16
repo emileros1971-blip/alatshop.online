@@ -390,7 +390,7 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
           form.action = WEB3FORMS_ENDPOINT;
           form.style.display = 'none';
 
-          const withKey = { access_key: WEB3FORMS_KEY, ...payload };
+          const withKey = { access_key: WEB3FORMS_KEY, to_email: 'milanmili7603@gmail.com', ...payload };
           Object.entries(withKey).forEach(([name, value]) => {
             const input = document.createElement('input');
             input.type = 'hidden';
@@ -413,7 +413,7 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
         }
 
         async function sendToEmail(payload) {
-          const body = { access_key: WEB3FORMS_KEY, ...payload };
+          const body = { access_key: WEB3FORMS_KEY, to_email: 'milanmili7603@gmail.com', ...payload };
           const response = await fetch(WEB3FORMS_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
