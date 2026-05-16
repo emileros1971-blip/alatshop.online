@@ -20,15 +20,6 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEEGNVWPYE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LEEGNVWPYE');
-</script>
     <title>Alatshop.online – Alat i oprema sa garancijom | Subotica</title>
     <meta
       name="description"
@@ -294,8 +285,8 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
     <script>
       (() => {
         // ---- Config ----
-        const EMAIL_AJAX_ENDPOINT = 'https://formsubmit.co/ajax/milanmili7603@gmail.com';
-        const EMAIL_FORM_ENDPOINT = 'https://formsubmit.co/milanmili7603@gmail.com';
+        const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+        const WEB3FORMS_KEY = '57dc636c-b5e8-49d8-b69e-4d4563c2ccbb';
         const CART_KEY = 'alatshop_cart';
         const fmt = (n) => Number(n || 0).toLocaleString('sr-RS') + ' din';
         const $ = (id) => document.getElementById(id);
@@ -396,10 +387,11 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
         function postWithNormalForm(payload) {
           const form = document.createElement('form');
           form.method = 'POST';
-          form.action = EMAIL_FORM_ENDPOINT;
+          form.action = WEB3FORMS_ENDPOINT;
           form.style.display = 'none';
 
-          Object.entries(payload).forEach(([name, value]) => {
+          const withKey = { access_key: WEB3FORMS_KEY, ...payload };
+          Object.entries(withKey).forEach(([name, value]) => {
             const input = document.createElement('input');
             input.type = 'hidden';
             input.name = name;
@@ -411,7 +403,7 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
           if (next) {
             const input = document.createElement('input');
             input.type = 'hidden';
-            input.name = '_next';
+            input.name = 'redirect';
             input.value = next;
             form.appendChild(input);
           }
@@ -421,19 +413,17 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
         }
 
         async function sendToEmail(payload) {
-          const response = await fetch(EMAIL_AJAX_ENDPOINT, {
+          const body = { access_key: WEB3FORMS_KEY, ...payload };
+          const response = await fetch(WEB3FORMS_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(body),
           });
 
-          if (!response.ok) {
-            let message = 'Email servis nije prihvatio poruku.';
-            try {
-              const data = await response.json();
-              if (data && data.message) message = data.message;
-            } catch (e) {}
-            throw new Error(message);
+          let data = null;
+          try { data = await response.json(); } catch (e) {}
+          if (!response.ok || !data || data.success !== true) {
+            throw new Error((data && data.message) || 'Email servis nije prihvatio poruku.');
           }
         }
 
@@ -505,9 +495,8 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
           const total = cart.reduce((sum, it) => sum + Number(it.price) * Number(it.qty), 0);
           const itemsText = cart.map((it) => `• ${it.name} — ${it.qty} kom × ${fmt(it.price)} = ${fmt(it.price * it.qty)}`).join('\n');
           const payload = {
-            _subject: 'NOVA PORUDŽBINA — Alatshop.online',
-            _template: 'table',
-            _captcha: 'false',
+            subject: 'NOVA PORUDŽBINA — Alatshop.online',
+            from_name: 'Alatshop.online — Porudžbina',
             'Ime i prezime': fd.get('ime_prezime'),
             'Telefon': fd.get('telefon'),
             'Email': fd.get('email'),
@@ -549,9 +538,8 @@ src="https://www.facebook.com/tr?id=1870853746912981&ev=PageView&noscript=1"
           if (!form.reportValidity()) return;
           const fd = new FormData(form);
           const payload = {
-            _subject: 'Novo pitanje sa sajta — Alatshop.online',
-            _template: 'table',
-            _captcha: 'false',
+            subject: 'Novo pitanje sa sajta — Alatshop.online',
+            from_name: 'Alatshop.online — Kontakt',
             'Ime': fd.get('ime'),
             'Email': fd.get('email'),
             'Telefon': fd.get('telefon') || '-',
